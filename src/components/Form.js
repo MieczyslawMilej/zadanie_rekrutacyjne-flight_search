@@ -63,7 +63,6 @@ export default function Form() {
 
 	function addEdge(origin, destination) {
 		adjacencyList.get(origin).push(destination);
-		// adjacencyList.get(destination).push(origin);
 	}
 
 	//Create the graph
@@ -74,8 +73,6 @@ export default function Form() {
 	////////////////////////////////// BFS method
 
 	function bfs(start, finish) {
-		debugger;
-		console.log("start " + start);
 
 		const previous = new Map();
 
@@ -84,16 +81,14 @@ export default function Form() {
 		queue.push({node: start, dist: 0})
 		visited.add(start);
 
-
-// console.log(previous);
 		while (queue.length > 0) {
 
 			const {node, dist} = queue.shift();
-			// console.log(node);
+
 			
-			// const destinations = adjacencyList.get(airport);
+		        const destinations = adjacencyList.get(airport);
 			
-			for (const destination of adjacencyList.get(node)) {
+			for (const destination of destinations) {
 
 				if (destination === finish) {
 					setMessage((prev) => ({
@@ -115,7 +110,7 @@ export default function Form() {
 					previous.set(destination, node)
 					visited.add(destination);
 					queue.push({node: destination, dist: dist +1});
-					// console.log(previous);
+
 				}
 			}
 		}
