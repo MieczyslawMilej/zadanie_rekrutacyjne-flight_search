@@ -1,0 +1,23 @@
+.App {
+	text-align: center;
+	min-height: 100vh;
+	background-color: $second-color;
+}
+
+.App-header {
+    background-color: $main-color;
+    height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.3rem;
+	color: $second-color;
+    letter-spacing: 5px;
+}
+
+.airplane {
+	width: 100px;
+	height: 100px;
+	padding-left: 30px;
+	fill: $accent-color;
+}
