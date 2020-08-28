@@ -86,7 +86,7 @@ export default function Form() {
 			const {node, dist} = queue.shift();
 
 			
-		        const destinations = adjacencyList.get(airport);
+		        const destinations = adjacencyList.get(node);
 			
 			for (const destination of destinations) {
 
